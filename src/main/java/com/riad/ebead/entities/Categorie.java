@@ -20,7 +20,7 @@ public class Categorie {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long idCategorie;
 	@NotEmpty
-	@Size(min=4,max=15)
+	@Size(min=4,max=20)
 	private String nomCategorie;
 	private String description;
 	private String nomPhoto;
@@ -31,6 +31,16 @@ public class Categorie {
 	
 	@OneToMany(mappedBy="categorie")
 	private Collection<Produit> produits = new ArrayList<Produit>();
+
+	
+
+	public Categorie(String nomCategorie, String description, String nomPhoto, byte[] photo) {
+		super();
+		this.nomCategorie = nomCategorie;
+		this.description = description;
+		this.nomPhoto = nomPhoto;
+		this.photo = photo;
+	}
 
 
 	public Categorie(Long idCategorie, String nomCategorie, String description, String nomPhoto, byte[] photo,

@@ -26,4 +26,41 @@ public class Role {
 	@OneToOne
 	@JoinColumn(name="idUser")
 	private User user;
+
+	public Role(Long idRole, String roleName, User user) {
+		super();
+		this.idRole = idRole;
+		this.roleName = roleName;
+		this.user = user;
+	}
+
+	public Role() {
+		super();
+	}
+
+	public Long getIdRole() {
+		return idRole;
+	}
+
+	public void setIdRole(Long idRole) {
+		this.idRole = idRole;
+	}
+
+	public String getRoleName() {
+		return roleName;
+	}
+
+	public void setRoleName(String roleName) {
+		this.roleName = roleName;
+	}
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+	
+	
 }
