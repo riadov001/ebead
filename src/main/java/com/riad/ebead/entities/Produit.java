@@ -32,9 +32,12 @@ public class Produit implements Serializable{
 	private int quantite;
 	private boolean selecionne;
 	private String photo;
+	
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name="idCategorie")
 	private Categorie categorie;
+	
+	
 	public Produit(Long idProduit, String designation, String description, double prix, int quantite,
 			boolean selecionne, String photo, Categorie categorie) {
 		super();
